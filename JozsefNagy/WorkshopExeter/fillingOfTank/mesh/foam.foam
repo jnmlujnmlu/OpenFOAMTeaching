@@ -1,0 +1,7 @@
+Commands to be executed in this tutorial for the mesh:
+
+- cp ../geometry/*.stl constant/triSurface
+- surfaceFeatureExtract
+- blockMesh
+- snappyHexMesh -overwrite
+

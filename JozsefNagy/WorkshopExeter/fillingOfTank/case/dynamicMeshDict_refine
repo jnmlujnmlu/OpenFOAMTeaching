@@ -1,0 +1,72 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      dynamicMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dynamicFvMesh   dynamicRefineFvMesh;
+
+dynamicRefineFvMeshCoeffs
+{
+    //How often to refine - JN: e.g. after 10 time steps
+    refineInterval  10;
+
+    //Field to be refinement on
+    field           alpha.water;
+
+    //Refine field inbetween lower..upper
+    //JN: refinement takes place in cells
+    //where alpha.water is between 0.01 and 0.99
+    lowerRefineLevel 0.01;
+    upperRefineLevel 0.99;
+
+    //If value < unrefineLevel unrefine
+    //we will unrefine for cells, 
+    //where alpha.water is below 10
+    //i.e. refine for 0.01-0.99
+    //unrefine below 0.01 and above 0.99
+    unrefineLevel   10;
+
+    // Have slower than 2:1 refinement
+    // JN: how many cells in the refinementlayer
+    // just an estimate
+    nBufferLayers   1;
+
+    //Refine cells only up to maxRefinement levels
+    //JN: how many levels do we want
+    maxRefinement   1;
+
+    //Stop refinement if maxCells reached
+    //maximum allowed number of cells - estimate!
+    maxCells        2000000;
+
+    //Flux field and corresponding velocity field. Fluxes on changed
+    //faces get recalculated by interpolating the velocity. Use 'none'
+    //on surfaceScalarFields that do not need to be reinterpolated.
+    correctFluxes
+    (
+        (phi none)
+        (nHatf none)
+        (rhoPhi none)
+        (alphaPhi none)
+        (ghf none)
+        (flux(alpha.water) none)
+    );
+
+    //Write the refinement level as a volScalarField
+    dumpLevel       true;
+}
+
+
+// ************************************************************************* //

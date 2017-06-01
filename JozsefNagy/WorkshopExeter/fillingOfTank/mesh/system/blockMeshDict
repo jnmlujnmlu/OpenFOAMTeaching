@@ -1,0 +1,60 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 1;
+
+//These vertices define the block below. It envelopes the stl files. The block can be even bigger than the stl files
+//Watch out if the stl files are created in mm or m!
+
+vertices
+(
+    ( -0.5 -0.5 -0.5)
+    (  0.5 -0.5 -0.5)
+    (  0.5  0.5 -0.5)
+    ( -0.5  0.5 -0.5)
+    ( -0.5 -0.5 1.0)
+    (  0.5 -0.5 1.0)
+    (  0.5  0.5 1.0)
+    ( -0.5  0.5 1.0)
+);
+
+blocks
+(
+    hex (0 1 2 3 4 5 6 7) (20 20 30) simpleGrading (1 1 1)//coarse grid - we will refine in snappyHexMeshDict
+);
+
+edges
+(
+);
+
+boundary
+(
+    allBoundary//Don't worry about these settings
+    {
+        type patch;
+        faces
+        (
+            (3 7 6 2)
+            (0 4 7 3)
+            (2 6 5 1)
+            (1 5 4 0)
+            (0 3 2 1)
+            (4 5 6 7)
+        );
+    }
+);
+
+// ************************************************************************* //

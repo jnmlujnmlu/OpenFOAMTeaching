@@ -1,0 +1,63 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     interFoam;
+
+startFrom       latestTime;//If we restart simulation continues from the last time step
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         5;//we stop after 5 s - adjustableRunTime!
+
+deltaT          0.005;//initial time step size
+
+writeControl    adjustableRunTime;//simulation can automatically adjust the time step according to the Courant number
+
+writeInterval   0.05;//we write out every 0.05 s
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression uncompressed;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable yes;//adjustableRunTime can modifiy the time step size
+
+adjustTimeStep  yes;//adjustableRunTime can modifiy the time step size
+
+//JN: Co = U*dx/dt
+//U is defined by the flow
+//dx is defined by the cell size i.e. the mesh
+//Co should be below or equal to 1
+//dt is the only value, which can guarantee this
+//dt is changed in each time step
+
+maxCo           1;//maximum value for Courant number
+maxAlphaCo      1;//maximum value for Courant number of the interface water/air
+
+maxDeltaT       1;//maximum time step
+
+
+// ************************************************************************* //

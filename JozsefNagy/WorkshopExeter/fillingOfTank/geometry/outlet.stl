@@ -1,0 +1,128 @@
+solid outlet
+facet normal 0 0 0
+outer loop
+vertex -0.500000 -0.500000 1.000000
+vertex -0.100000 -0.500000 1.000000
+vertex -0.100000 -0.100000 1.000000
+endloop
+endfacet
+facet normal 0 0 0
+outer loop
+vertex -0.100000 -0.100000 1.000000
+vertex -0.500000 -0.100000 1.000000
+vertex -0.500000 -0.500000 1.000000
+endloop
+endfacet
+facet normal 0 0 0
+outer loop
+vertex -0.100000 0.500000 1.000000
+vertex -0.500000 0.500000 1.000000
+vertex -0.500000 0.100000 1.000000
+endloop
+endfacet
+facet normal 0 0 0
+outer loop
+vertex -0.500000 0.100000 1.000000
+vertex -0.100000 0.100000 1.000000
+vertex -0.100000 0.500000 1.000000
+endloop
+endfacet
+facet normal 0 0 0
+outer loop
+vertex -0.100000 0.100000 1.000000
+vertex -0.500000 0.100000 1.000000
+vertex -0.500000 -0.100000 1.000000
+endloop
+endfacet
+facet normal 0 0 0
+outer loop
+vertex -0.500000 -0.100000 1.000000
+vertex -0.100000 -0.100000 1.000000
+vertex -0.100000 0.100000 1.000000
+endloop
+endfacet
+facet normal 0 0 0
+outer loop
+vertex 0.500000 0.100000 1.000000
+vertex 0.100000 0.100000 1.000000
+vertex 0.100000 -0.100000 1.000000
+endloop
+endfacet
+facet normal 0 0 0
+outer loop
+vertex 0.100000 -0.100000 1.000000
+vertex 0.500000 -0.100000 1.000000
+vertex 0.500000 0.100000 1.000000
+endloop
+endfacet
+facet normal 0 0 0
+outer loop
+vertex 0.100000 0.100000 1.000000
+vertex -0.100000 0.100000 1.000000
+vertex -0.100000 -0.100000 1.000000
+endloop
+endfacet
+facet normal 0 0 0
+outer loop
+vertex -0.100000 -0.100000 1.000000
+vertex 0.100000 -0.100000 1.000000
+vertex 0.100000 0.100000 1.000000
+endloop
+endfacet
+facet normal 0 0 0
+outer loop
+vertex 0.500000 0.500000 1.000000
+vertex 0.100000 0.500000 1.000000
+vertex 0.100000 0.100000 1.000000
+endloop
+endfacet
+facet normal 0 0 0
+outer loop
+vertex 0.100000 0.100000 1.000000
+vertex 0.500000 0.100000 1.000000
+vertex 0.500000 0.500000 1.000000
+endloop
+endfacet
+facet normal 0 0 0
+outer loop
+vertex 0.100000 0.500000 1.000000
+vertex -0.100000 0.500000 1.000000
+vertex -0.100000 0.100000 1.000000
+endloop
+endfacet
+facet normal 0 0 0
+outer loop
+vertex -0.100000 0.100000 1.000000
+vertex 0.100000 0.100000 1.000000
+vertex 0.100000 0.500000 1.000000
+endloop
+endfacet
+facet normal 0 0 0
+outer loop
+vertex 0.500000 -0.100000 1.000000
+vertex 0.100000 -0.100000 1.000000
+vertex 0.100000 -0.500000 1.000000
+endloop
+endfacet
+facet normal 0 0 0
+outer loop
+vertex 0.100000 -0.500000 1.000000
+vertex 0.500000 -0.500000 1.000000
+vertex 0.500000 -0.100000 1.000000
+endloop
+endfacet
+facet normal 0 0 0
+outer loop
+vertex 0.100000 -0.100000 1.000000
+vertex -0.100000 -0.100000 1.000000
+vertex -0.100000 -0.500000 1.000000
+endloop
+endfacet
+facet normal 0 0 0
+outer loop
+vertex -0.100000 -0.500000 1.000000
+vertex 0.100000 -0.500000 1.000000
+vertex 0.100000 -0.100000 1.000000
+endloop
+endfacet
+endsolid outlet

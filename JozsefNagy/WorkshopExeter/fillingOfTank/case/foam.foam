@@ -1,0 +1,33 @@
+Commands to be executed in this tutorial:
+
+- cp -r ../mesh/constant/polyMesh constant
+- setFields
+- interFoam
+
+For refinement:
+
+- cp -r ../mesh/constant/polyMesh constant
+- refineMesh -overwrite
+- cp 0/alpha.water.orig 0/alpha.water
+- setFields
+- interFoam
+
+or redo snappyHexMesh
+
+For parallel simulations: 
+
+- cp -r ../mesh/constant/polyMesh constant
+(- refineMesh -overwrite)
+- setFields
+- decomposePar
+- mpirun -np 4 interFoam -parallel > log.interFoam &
+
+For dynamic mesh:
+
+- cp -r ../mesh/constant/polyMesh constant
+- cp 0/alpha.water.orig 0/alpha.water
+- cp dynamicMeshDict_refine constant/dynamicMeshDict
+- rm constant/polyMesh/refinementHistory
+- setFields
+- decomposePar
+- mpirun -np 4 interDyMFoam -parallel > log.interFoam &
