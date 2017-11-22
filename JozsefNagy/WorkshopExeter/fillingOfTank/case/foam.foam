@@ -31,3 +31,7 @@ For dynamic mesh:
 - setFields
 - decomposePar
 - mpirun -np 4 interDyMFoam -parallel > log.interFoam &
+
+Send us feedback:
+
+- wiki@openfoam.com

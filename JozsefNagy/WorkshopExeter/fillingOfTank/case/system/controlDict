@@ -47,7 +47,7 @@ runTimeModifiable yes;//adjustableRunTime can modifiy the time step size
 
 adjustTimeStep  yes;//adjustableRunTime can modifiy the time step size
 
-//JN: Co = U*dx/dt
+//JN: Co = U*dt/dx
 //U is defined by the flow
 //dx is defined by the cell size i.e. the mesh
 //Co should be below or equal to 1
